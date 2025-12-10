@@ -1,0 +1,4 @@
+requests==2.31.0
+dnspython==2.6.1
+PyGithub==2.3.0
+python-dateutil==2.9.0.post0
