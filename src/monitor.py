@@ -123,8 +123,6 @@ def main():
         reg_records = entry.get('registry_records', {})
         
         # 1. Domain Expired
-        # condition: expiration_date_iso8601 = today or within 5 days before today
-        # 1. Domain Expired
         # condition: expiration_date_iso8601 = today or within 5 days before today.
         # Logic: If expired in window and NOT flagged as expired in previous run, create issue.
         # This prevents re-alerting on the same expiration event.
@@ -164,8 +162,6 @@ def main():
         if not is_first_run and is_hold and not prev_is_hold:
             gh.create_or_update_issue(psl_entry, body, "registry hold", [section_tag])
 
-        # 3. New Registration
-        # condition: creation_date_iso8601 = today
         # 3. New Registration
         # condition: creation_date_iso8601 = today
         create_iso = reg_records.get('creation_date_iso8601')
