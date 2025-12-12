@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -12906,7 +12906,7 @@
     "is_expired": false
   },
   "takehara.hiroshima.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16152,7 +16152,7 @@
     "is_expired": false
   },
   "fujimi.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22044,7 +22044,7 @@
     "is_expired": false
   },
   "edu.ms": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
@@ -30786,7 +30786,7 @@
     "is_expired": false
   },
   "net.tm": {
-    "dns_error": "SERVFAIL",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -53743,7 +53743,7 @@
   },
   "iopsys.se": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -54409,7 +54409,7 @@
   },
   "webthings.io": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -57990,7 +57990,7 @@
     "is_expired": false
   },
   "logoip.de": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
