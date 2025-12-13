@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -8070,7 +8070,7 @@
     "is_expired": false
   },
   "barletta-trani-andria.it": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22044,7 +22044,7 @@
     "is_expired": false
   },
   "edu.ms": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
@@ -30786,7 +30786,7 @@
     "is_expired": false
   },
   "net.tm": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47461,7 +47461,7 @@
   },
   "cafjs.com": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -56767,7 +56767,7 @@
   },
   "*.paywhirl.com": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -57990,7 +57990,7 @@
     "is_expired": false
   },
   "logoip.de": {
-    "dns_error": "SERVFAIL",
+    "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
@@ -58897,7 +58897,7 @@
   },
   "calculators.cx": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
