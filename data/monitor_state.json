@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5270,7 +5270,7 @@
   "ac.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "biz.fj": {
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13074,7 +13074,7 @@
     "is_expired": false
   },
   "furubira.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16974,7 +16974,7 @@
     "is_expired": false
   },
   "muika.niigata.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18582,7 +18582,7 @@
     "is_expired": false
   },
   "notogawa.shiga.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -21566,19 +21566,19 @@
   "com.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "edu.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "gov.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "id.ly": {
@@ -21590,13 +21590,13 @@
   "med.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "net.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "org.ly": {
@@ -21608,13 +21608,13 @@
   "plc.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "sch.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "ma": {
@@ -32670,13 +32670,13 @@
     "is_expired": false
   },
   "lib.dc.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
   },
   "cc.de.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32940,7 +32940,7 @@
     "is_expired": false
   },
   "cc.nh.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47461,7 +47461,7 @@
   },
   "cafjs.com": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -48720,6 +48720,24 @@
     "is_expired": false
   },
   "shop.th": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "co.scot": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "me.scot": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "org.scot": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -53379,7 +53397,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "smushcdn.com": {
     "dns_error": null,
@@ -56767,7 +56785,7 @@
   },
   "*.paywhirl.com": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -58897,7 +58915,7 @@
   },
   "calculators.cx": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -58956,8 +58974,8 @@
     "is_expired": false
   },
   "storipress.app": {
-    "dns_error": null,
-    "psl_txt_exists": true,
+    "dns_error": "NXDOMAIN",
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
