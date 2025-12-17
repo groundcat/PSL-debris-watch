@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18144,7 +18144,7 @@
     "is_expired": false
   },
   "hatogaya.saitama.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20694,7 +20694,7 @@
     "is_expired": false
   },
   "prd.km": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20736,7 +20736,7 @@
     "is_expired": false
   },
   "pharmaciens.km": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22746,7 +22746,7 @@
     "is_expired": false
   },
   "web.ni": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32724,7 +32724,7 @@
     "is_expired": false
   },
   "lib.hi.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -58974,7 +58974,7 @@
     "is_expired": false
   },
   "storipress.app": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
