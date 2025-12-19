@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13044,7 +13044,7 @@
     "is_expired": false
   },
   "esan.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16236,7 +16236,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -19638,7 +19638,7 @@
     "is_expired": false
   },
   "kawahara.tottori.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20820,7 +20820,7 @@
     "is_expired": false
   },
   "tra.kp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22158,7 +22158,7 @@
     "is_expired": false
   },
   "aero.mv": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33120,7 +33120,7 @@
     "is_expired": false
   },
   "cc.ut.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -34194,7 +34194,7 @@
     "is_expired": false
   },
   "\u0645\u0635\u0631": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
