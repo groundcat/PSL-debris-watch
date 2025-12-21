@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5270,7 +5270,7 @@
   "ac.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "biz.fj": {
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5970,6 +5970,24 @@
     "is_expired": false
   },
   "org.gy": {
+    "dns_error": null,
+    "psl_txt_exists": null,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "onhercules.app": {
+    "dns_error": null,
+    "psl_txt_exists": null,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "hercules-app.com": {
+    "dns_error": null,
+    "psl_txt_exists": null,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "hercules-dev.com": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
@@ -7050,13 +7068,13 @@
     "is_expired": false
   },
   "net.io": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
   },
   "nom.io": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -12888,7 +12906,7 @@
     "is_expired": false
   },
   "seranishi.hiroshima.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -17790,7 +17808,7 @@
     "is_expired": false
   },
   "minato.osaka.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18000,7 +18018,7 @@
     "is_expired": false
   },
   "kitagata.saga.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20694,7 +20712,7 @@
     "is_expired": false
   },
   "prd.km": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -21566,19 +21584,19 @@
   "com.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "edu.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "gov.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "id.ly": {
@@ -21590,13 +21608,13 @@
   "med.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "net.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "org.ly": {
@@ -21608,13 +21626,13 @@
   "plc.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "sch.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "ma": {
@@ -32718,7 +32736,7 @@
     "is_expired": false
   },
   "cc.hi.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47003,6 +47021,12 @@
     "is_hold": false,
     "is_expired": false
   },
+  "antagonist.cloud": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "apigee.io": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -47016,6 +47040,96 @@
     "is_expired": false
   },
   "siiites.com": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.ap-north-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.ap-south-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.ap-south-2.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.eu-central-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.eu-north-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-central-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-central-2.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-east-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-east-2.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-west-1.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-west-2.r.cloud.int.apple": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.us-west-3.r.cloud.int.apple": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -47040,6 +47154,12 @@
     "is_expired": false
   },
   "appwrite.global": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "appwrite.network": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -48701,10 +48821,28 @@
     "is_hold": false,
     "is_expired": false
   },
+  "ccwu.cc": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "cc.cd": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "us.ci": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "de5.net": {
     "dns_error": "NXDOMAIN",
     "psl_txt_exists": false,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "dnshome.de": {
@@ -50657,12 +50795,6 @@
     "is_hold": false,
     "is_expired": false
   },
-  "en-root.fr": {
-    "dns_error": "NXDOMAIN",
-    "psl_txt_exists": false,
-    "is_hold": true,
-    "is_expired": false
-  },
   "mytuleap.com": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -51779,33 +51911,15 @@
     "is_hold": false,
     "is_expired": false
   },
+  "sprites.app": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "fly.dev": {
     "dns_error": null,
     "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "shw.io": {
-    "dns_error": "SERVFAIL",
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "edgeapp.net": {
-    "dns_error": "SERVFAIL",
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "forgeblocks.com": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "id.forgerock.io": {
-    "dns_error": null,
-    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -53429,6 +53543,12 @@
     "is_hold": false,
     "is_expired": false
   },
+  "indevs.in": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "dyn-berlin.de": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -55013,6 +55133,18 @@
     "is_hold": false,
     "is_expired": false
   },
+  "magicpatterns.app": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "magicpatternsapp.com": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "hb.cldmail.ru": {
     "dns_error": null,
     "psl_txt_exists": false,
@@ -56505,7 +56637,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "123website.lu": {
     "dns_error": null,
@@ -56761,7 +56893,7 @@
   },
   "pgfog.com": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -56837,6 +56969,18 @@
     "is_hold": false,
     "is_expired": false
   },
+  "forgeblocks.com": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "id.forgerock.io": {
+    "dns_error": null,
+    "psl_txt_exists": false,
+    "is_hold": false,
+    "is_expired": false
+  },
   "support.site": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -56888,18 +57032,6 @@
   "*.tst.site": {
     "dns_error": null,
     "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "platter-app.dev": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "platterp.us": {
-    "dns_error": null,
-    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -57000,6 +57132,12 @@
     "is_expired": false
   },
   "protonet.io": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "platter-app.dev": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -57549,7 +57687,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "rub.de": {
     "dns_error": null,
@@ -57998,6 +58136,12 @@
   "sandcats.io": {
     "dns_error": null,
     "psl_txt_exists": false,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "sav.case": {
+    "dns_error": null,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -58581,7 +58725,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "port.fr": {
     "dns_error": null,
@@ -58970,12 +59114,6 @@
   "storebase.store": {
     "dns_error": null,
     "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "storipress.app": {
-    "dns_error": "NXDOMAIN",
-    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
