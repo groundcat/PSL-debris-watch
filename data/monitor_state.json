@@ -5142,7 +5142,7 @@
     "is_expired": false
   },
   "tv.eg": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13062,7 +13062,7 @@
     "is_expired": false
   },
   "esan.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13470,7 +13470,7 @@
     "is_expired": false
   },
   "otobe.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13698,7 +13698,7 @@
     "is_expired": false
   },
   "toya.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16254,7 +16254,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22764,7 +22764,7 @@
     "is_expired": false
   },
   "web.ni": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -27498,7 +27498,7 @@
     "is_expired": false
   },
   "pro.om": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32628,7 +32628,7 @@
     "is_expired": false
   },
   "lib.as.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32688,7 +32688,7 @@
     "is_expired": false
   },
   "lib.dc.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32958,7 +32958,7 @@
     "is_expired": false
   },
   "cc.nh.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33072,7 +33072,7 @@
     "is_expired": false
   },
   "lib.pr.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33084,7 +33084,7 @@
     "is_expired": false
   },
   "lib.ri.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33198,7 +33198,7 @@
     "is_expired": false
   },
   "cc.wi.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -56881,7 +56881,7 @@
   },
   "ox.rs": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
