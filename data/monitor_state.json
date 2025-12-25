@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -12924,7 +12924,7 @@
     "is_expired": false
   },
   "takehara.hiroshima.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13470,7 +13470,7 @@
     "is_expired": false
   },
   "otobe.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -27498,7 +27498,7 @@
     "is_expired": false
   },
   "pro.om": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32628,7 +32628,7 @@
     "is_expired": false
   },
   "lib.as.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32688,7 +32688,7 @@
     "is_expired": false
   },
   "lib.dc.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32958,7 +32958,7 @@
     "is_expired": false
   },
   "cc.nh.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33072,7 +33072,7 @@
     "is_expired": false
   },
   "lib.pr.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -34170,7 +34170,7 @@
     "is_expired": false
   },
   "\u09ac\u09be\u0982\u09b2\u09be": {
-    "dns_error": "SERVFAIL",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -56869,7 +56869,7 @@
   },
   "own.pm": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -56881,7 +56881,7 @@
   },
   "ox.rs": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
