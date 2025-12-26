@@ -12924,7 +12924,7 @@
     "is_expired": false
   },
   "takehara.hiroshima.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33186,7 +33186,7 @@
     "is_expired": false
   },
   "cc.wa.us": {
-    "dns_error": "SERVFAIL",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -56869,7 +56869,7 @@
   },
   "own.pm": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
