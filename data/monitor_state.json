@@ -3924,7 +3924,7 @@
     "is_expired": false
   },
   "\u7db2\u7d61.cn": {
-    "dns_error": "SERVFAIL",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5276,7 +5276,7 @@
   "biz.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "com.fj": {
@@ -6951,7 +6951,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "org.in": {
     "dns_error": null,
@@ -8280,7 +8280,7 @@
     "is_expired": false
   },
   "campidanomedio.it": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -11664,7 +11664,7 @@
     "is_expired": false
   },
   "chikugo.fukuoka.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -12822,7 +12822,7 @@
     "is_expired": false
   },
   "hongo.hiroshima.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20730,7 +20730,7 @@
     "is_expired": false
   },
   "coop.km": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -30180,6 +30180,12 @@
     "is_expired": false
   },
   "sk": {
+    "dns_error": null,
+    "psl_txt_exists": null,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "org.sk": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
@@ -48842,7 +48848,7 @@
   "de5.net": {
     "dns_error": null,
     "psl_txt_exists": true,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "dnshome.de": {
@@ -53513,6 +53519,12 @@
     "is_hold": false,
     "is_expired": false
   },
+  "imagine-proxy.work": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "smushcdn.com": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -54510,6 +54522,12 @@
     "is_expired": false
   },
   "kuleuven.cloud": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "ae.kg": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -56525,12 +56543,6 @@
     "is_hold": false,
     "is_expired": false
   },
-  "nyc.mn": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
   "prvcy.page": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -56887,7 +56899,7 @@
   },
   "oy.lc": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -57156,6 +57168,18 @@
     "is_expired": false
   },
   "byen.site": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "nyc.mn": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.cn.st": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -58683,7 +58707,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "avocat.fr": {
     "dns_error": null,
@@ -60510,6 +60534,12 @@
     "is_expired": false
   },
   "zone.id": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "nett.to": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
