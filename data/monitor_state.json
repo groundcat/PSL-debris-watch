@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -7314,7 +7314,7 @@
     "is_expired": false
   },
   "friuli-veneziagiulia.it": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -8466,7 +8466,7 @@
     "is_expired": false
   },
   "dellogliastra.it": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13350,7 +13350,7 @@
     "is_expired": false
   },
   "mukawa.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -30447,7 +30447,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "saotome.st": {
     "dns_error": null,
@@ -32268,7 +32268,7 @@
     "is_expired": false
   },
   "vi.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
@@ -32370,7 +32370,7 @@
     "is_expired": false
   },
   "k12.gu.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32700,7 +32700,7 @@
     "is_expired": false
   },
   "cc.de.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33144,7 +33144,7 @@
     "is_expired": false
   },
   "cc.ut.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
