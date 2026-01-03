@@ -318,7 +318,7 @@
     "is_expired": false
   },
   "engineer.aero": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -564,7 +564,7 @@
     "is_expired": false
   },
   "show.aero": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13062,7 +13062,7 @@
     "is_expired": false
   },
   "esan.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13092,7 +13092,7 @@
     "is_expired": false
   },
   "furubira.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13458,7 +13458,7 @@
     "is_expired": false
   },
   "okoppe.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -15030,7 +15030,7 @@
     "is_expired": false
   },
   "tsukui.kanagawa.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16254,7 +16254,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16512,7 +16512,7 @@
     "is_expired": false
   },
   "togakushi.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -19764,7 +19764,7 @@
     "is_expired": false
   },
   "johana.toyama.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22764,7 +22764,7 @@
     "is_expired": false
   },
   "web.ni": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32532,7 +32532,7 @@
     "is_expired": false
   },
   "k12.pr.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32694,7 +32694,7 @@
     "is_expired": false
   },
   "lib.dc.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33084,7 +33084,7 @@
     "is_expired": false
   },
   "cc.ri.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33144,7 +33144,7 @@
     "is_expired": false
   },
   "cc.ut.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33168,7 +33168,7 @@
     "is_expired": false
   },
   "cc.vi.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -48411,7 +48411,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "knx-server.net": {
     "dns_error": null,
@@ -53605,19 +53605,19 @@
   },
   "in-vpn.net": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
   "in-dsl.org": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
   "in-vpn.org": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -53923,7 +53923,7 @@
   },
   "ir.md": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
