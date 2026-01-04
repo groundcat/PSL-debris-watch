@@ -564,7 +564,7 @@
     "is_expired": false
   },
   "show.aero": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5270,19 +5270,19 @@
   "ac.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "biz.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "com.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "edu.fj": {
@@ -5966,13 +5966,13 @@
   "net.gy": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": true
   },
   "org.gy": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": true
   },
   "onhercules.app": {
@@ -6795,13 +6795,13 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "biz.in": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "business.in": {
     "dns_error": null,
@@ -6831,13 +6831,13 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "coop.in": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "cs.in": {
     "dns_error": null,
@@ -6849,7 +6849,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "dr.in": {
     "dns_error": null,
@@ -6897,7 +6897,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "ind.in": {
     "dns_error": null,
@@ -6909,13 +6909,13 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "int.in": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "internet.in": {
     "dns_error": null,
@@ -6969,13 +6969,13 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "pro.in": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "res.in": {
     "dns_error": null,
@@ -6987,7 +6987,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "tv.in": {
     "dns_error": null,
@@ -7062,7 +7062,7 @@
     "is_expired": false
   },
   "mil.io": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
@@ -12924,7 +12924,7 @@
     "is_expired": false
   },
   "takehara.hiroshima.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13458,7 +13458,7 @@
     "is_expired": false
   },
   "okoppe.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -15030,7 +15030,7 @@
     "is_expired": false
   },
   "tsukui.kanagawa.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16254,7 +16254,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -21584,55 +21584,55 @@
   "com.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "edu.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "gov.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "id.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "med.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "net.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "org.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "plc.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "sch.ly": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "ma": {
@@ -22074,9 +22074,9 @@
     "is_expired": false
   },
   "net.ms": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": true
   },
   "org.ms": {
@@ -22557,7 +22557,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "com.nf": {
     "dns_error": null,
@@ -22569,7 +22569,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "info.nf": {
     "dns_error": null,
@@ -22581,13 +22581,13 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "other.nf": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "per.nf": {
     "dns_error": null,
@@ -29744,7 +29744,7 @@
   "edu.sb": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": true
   },
   "gov.sb": {
@@ -30261,7 +30261,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "org.sn": {
     "dns_error": null,
@@ -30446,7 +30446,7 @@
   "principe.st": {
     "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": true
   },
   "saotome.st": {
@@ -30542,7 +30542,7 @@
   "mil.sy": {
     "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "net.sy": {
@@ -32694,7 +32694,7 @@
     "is_expired": false
   },
   "lib.dc.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33084,7 +33084,7 @@
     "is_expired": false
   },
   "cc.ri.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33168,7 +33168,7 @@
     "is_expired": false
   },
   "cc.vi.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47258,7 +47258,7 @@
   "translated.page": {
     "dns_error": "NXDOMAIN",
     "psl_txt_exists": false,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "myfritz.link": {
@@ -51981,7 +51981,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "freebox-os.com": {
     "dns_error": null,
@@ -52767,7 +52767,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "nobushi.jp": {
     "dns_error": null,
@@ -52857,7 +52857,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "pya.jp": {
     "dns_error": null,
@@ -53180,6 +53180,12 @@
   "g\u00fcnstigliefern.de": {
     "dns_error": null,
     "psl_txt_exists": false,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "gv.uy": {
+    "dns_error": null,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -53605,19 +53611,19 @@
   },
   "in-vpn.net": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
   "in-dsl.org": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
   "in-vpn.org": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -59466,6 +59472,36 @@
     "is_expired": false
   },
   "directwp.eu": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "ec.cc": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "eu.cc": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "gu.cc": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "uk.cc": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "us.cc": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
