@@ -2025,31 +2025,31 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": false
+    "is_expired": true
   },
   "edu.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": false
+    "is_expired": true
   },
   "gov.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "net.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": false
+    "is_expired": true
   },
   "org.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": false
+    "is_expired": true
   },
   "bn": {
     "dns_error": null,
@@ -5043,7 +5043,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "pri.ee": {
     "dns_error": null,
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -6708,7 +6708,7 @@
     "is_expired": false
   },
   "ltd.co.im": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -7290,7 +7290,7 @@
     "is_expired": false
   },
   "friuli-v-giulia.it": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -10524,7 +10524,7 @@
     "is_expired": false
   },
   "hazu.aichi.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13062,7 +13062,7 @@
     "is_expired": false
   },
   "esan.hokkaido.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13698,7 +13698,7 @@
     "is_expired": false
   },
   "toya.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -14352,7 +14352,7 @@
     "is_expired": false
   },
   "yawara.ibaraki.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16254,7 +16254,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16824,7 +16824,7 @@
     "is_expired": false
   },
   "ouda.nara.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -30447,7 +30447,7 @@
     "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": true
+    "is_expired": false
   },
   "saotome.st": {
     "dns_error": null,
@@ -32748,7 +32748,7 @@
     "is_expired": false
   },
   "lib.hi.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33084,7 +33084,7 @@
     "is_expired": false
   },
   "cc.ri.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -51175,7 +51175,7 @@
   },
   "eurodir.ru": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
