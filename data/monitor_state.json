@@ -3918,19 +3918,19 @@
     "is_expired": false
   },
   "\u516c\u53f8.cn": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
   },
   "\u7db2\u7d61.cn": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
   },
   "\u7f51\u7edc.cn": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5106,7 +5106,7 @@
     "is_expired": false
   },
   "mil.eg": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -8184,7 +8184,7 @@
     "is_expired": false
   },
   "bozen-s\u00fcdtirol.it": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -11838,7 +11838,7 @@
     "is_expired": false
   },
   "nakagawa.fukuoka.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13092,7 +13092,7 @@
     "is_expired": false
   },
   "furubira.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16824,7 +16824,7 @@
     "is_expired": false
   },
   "ouda.nara.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18024,7 +18024,7 @@
     "is_expired": false
   },
   "kitahata.saga.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18162,7 +18162,7 @@
     "is_expired": false
   },
   "hatogaya.saitama.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -20838,7 +20838,7 @@
     "is_expired": false
   },
   "tra.kp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -22176,7 +22176,7 @@
     "is_expired": false
   },
   "aero.mv": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -31872,7 +31872,7 @@
     "is_expired": false
   },
   "us.ug": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -32268,7 +32268,7 @@
     "is_expired": false
   },
   "vi.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": true,
     "is_expired": false
@@ -33084,7 +33084,7 @@
     "is_expired": false
   },
   "cc.ri.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47563,7 +47563,7 @@
   },
   "bubbleapps.io": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -48411,7 +48411,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "knx-server.net": {
     "dns_error": null,
@@ -53929,7 +53929,7 @@
   },
   "ir.md": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -54667,13 +54667,13 @@
   },
   "liara.run": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
   "iran.liara.run": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -55347,7 +55347,7 @@
     "dns_error": null,
     "psl_txt_exists": false,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "azure-mobile.net": {
     "dns_error": null,
@@ -56209,7 +56209,7 @@
   },
   "mydissent.net": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -56899,7 +56899,7 @@
   },
   "ox.rs": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -57001,13 +57001,13 @@
   },
   "support.site": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
   "on-web.fr": {
     "dns_error": null,
-    "psl_txt_exists": true,
+    "psl_txt_exists": false,
     "is_hold": false,
     "is_expired": false
   },
@@ -57115,13 +57115,13 @@
   },
   "c01.kr": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
   "eliv-cdn.kr": {
     "dns_error": null,
-    "psl_txt_exists": false,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -59619,7 +59619,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "azimuth.network": {
     "dns_error": null,
