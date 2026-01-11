@@ -2025,31 +2025,31 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": true
+    "is_expired": false
   },
   "edu.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": true
+    "is_expired": false
   },
   "gov.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "net.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": true
+    "is_expired": false
   },
   "org.bm": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": true,
-    "is_expired": true
+    "is_expired": false
   },
   "bn": {
     "dns_error": null,
@@ -3924,7 +3924,7 @@
     "is_expired": false
   },
   "\u7db2\u7d61.cn": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5043,7 +5043,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "pri.ee": {
     "dns_error": null,
@@ -5270,7 +5270,7 @@
   "ac.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "biz.fj": {
@@ -5282,7 +5282,7 @@
   "com.fj": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": false,
+    "is_hold": true,
     "is_expired": false
   },
   "edu.fj": {
@@ -5415,7 +5415,7 @@
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "tm.fr": {
     "dns_error": null,
@@ -5904,7 +5904,7 @@
     "is_expired": false
   },
   "info.gu": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -5966,28 +5966,10 @@
   "net.gy": {
     "dns_error": null,
     "psl_txt_exists": null,
-    "is_hold": true,
+    "is_hold": false,
     "is_expired": false
   },
   "org.gy": {
-    "dns_error": null,
-    "psl_txt_exists": null,
-    "is_hold": true,
-    "is_expired": false
-  },
-  "onhercules.app": {
-    "dns_error": null,
-    "psl_txt_exists": null,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "hercules-app.com": {
-    "dns_error": null,
-    "psl_txt_exists": null,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "hercules-dev.com": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
@@ -8352,7 +8334,7 @@
     "is_expired": false
   },
   "cesena-forl\u00ec.it": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -13092,7 +13074,7 @@
     "is_expired": false
   },
   "furubira.hokkaido.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -14340,7 +14322,7 @@
     "is_expired": false
   },
   "yachiyo.ibaraki.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16254,7 +16236,7 @@
     "is_expired": false
   },
   "kisofukushima.nagano.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -16488,7 +16470,7 @@
     "is_expired": false
   },
   "takamori.nagano.jp": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -17778,7 +17760,7 @@
     "is_expired": false
   },
   "kawachinagano.osaka.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -18210,7 +18192,7 @@
     "is_expired": false
   },
   "iwatsuki.saitama.jp": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -29928,7 +29910,7 @@
     "is_expired": false
   },
   "fhv.se": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -29958,7 +29940,7 @@
     "is_expired": false
   },
   "komforb.se": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -30264,12 +30246,6 @@
     "is_expired": false
   },
   "org.sn": {
-    "dns_error": null,
-    "psl_txt_exists": null,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "perso.sn": {
     "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
@@ -32634,7 +32610,7 @@
     "is_expired": false
   },
   "lib.as.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33174,7 +33150,7 @@
     "is_expired": false
   },
   "lib.vi.us": {
-    "dns_error": null,
+    "dns_error": "NXDOMAIN",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -33216,7 +33192,7 @@
     "is_expired": false
   },
   "cc.wv.us": {
-    "dns_error": "NXDOMAIN",
+    "dns_error": null,
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -34404,7 +34380,7 @@
     "is_expired": false
   },
   "\u0627\u0644\u0627\u0631\u062f\u0646": {
-    "dns_error": null,
+    "dns_error": "SERVFAIL",
     "psl_txt_exists": null,
     "is_hold": false,
     "is_expired": false
@@ -47255,12 +47231,6 @@
     "is_hold": false,
     "is_expired": false
   },
-  "translated.page": {
-    "dns_error": "NXDOMAIN",
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
   "myfritz.link": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -47268,12 +47238,6 @@
     "is_expired": false
   },
   "myfritz.net": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "onavstack.net": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -47562,6 +47526,12 @@
     "is_expired": false
   },
   "bubbleapps.io": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "*.bwcloud-os-instance.de": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -48674,6 +48644,18 @@
   "deta.dev": {
     "dns_error": "SERVFAIL",
     "psl_txt_exists": false,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "deuxfleurs.eu": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "deuxfleurs.page": {
+    "dns_error": null,
+    "psl_txt_exists": true,
     "is_hold": false,
     "is_expired": false
   },
@@ -53291,6 +53273,24 @@
     "is_hold": false,
     "is_expired": false
   },
+  "onhercules.app": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "hercules-app.com": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "hercules-dev.com": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
   "herokuapp.com": {
     "dns_error": null,
     "psl_txt_exists": false,
@@ -53556,12 +53556,6 @@
     "is_expired": false
   },
   "wpmudev.host": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "indevs.in": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -55347,7 +55341,7 @@
     "dns_error": null,
     "psl_txt_exists": false,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "azure-mobile.net": {
     "dns_error": null,
@@ -56697,7 +56691,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "123minsida.se": {
     "dns_error": null,
@@ -56850,12 +56844,6 @@
     "is_expired": false
   },
   "authgearapps.com": {
-    "dns_error": null,
-    "psl_txt_exists": true,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "skygearapp.com": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -57114,6 +57102,12 @@
     "is_expired": false
   },
   "c01.kr": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "eliv-api.kr": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -58569,7 +58563,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": false
+    "is_expired": true
   },
   "seidat.net": {
     "dns_error": null,
@@ -59040,6 +59034,12 @@
     "is_expired": false
   },
   "stackit.zone": {
+    "dns_error": null,
+    "psl_txt_exists": true,
+    "is_hold": false,
+    "is_expired": false
+  },
+  "indevs.in": {
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
@@ -59619,7 +59619,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "azimuth.network": {
     "dns_error": null,
@@ -59801,84 +59801,6 @@
     "is_hold": false,
     "is_expired": false
   },
-  "dd-dns.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "dray-dns.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "draydns.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "dyn-vpn.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "dynvpn.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "mein-vigor.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "my-vigor.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "my-wan.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "syno-ds.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "synology-diskstation.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "synology-ds.de": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "diskstation.eu": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
-  "diskstation.org": {
-    "dns_error": null,
-    "psl_txt_exists": false,
-    "is_hold": false,
-    "is_expired": false
-  },
   "typedream.app": {
     "dns_error": null,
     "psl_txt_exists": true,
@@ -59973,7 +59895,7 @@
     "dns_error": null,
     "psl_txt_exists": true,
     "is_hold": false,
-    "is_expired": true
+    "is_expired": false
   },
   "sch.wf": {
     "dns_error": null,
