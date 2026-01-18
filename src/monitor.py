@@ -49,23 +49,26 @@ def generate_body(domain_entry, whois_data):
     # Format registry records from Whois Data
     reg_str = ""
     if whois_data:
+        # We try to mimic the structure: key-value pairs
+        # Common fields: reserved, registered, creationDate, expirationDate, status, nameServers
         fields = [
             'reserved', 'registered', 'registrar', 'creationDateISO8601', 
             'expirationDateISO8601', 'updatedDateISO8601', 'nameServers'
         ]
         
         # Helper to format status list
-        statuses = whois_data.get('data', {}).get('status', [])
-        if statuses:
+        w_data_inner = whois_data.get('data')
+        if w_data_inner:
+             statuses = w_data_inner.get('status', [])
              status_txts = [s.get('text', '') for s in statuses if isinstance(s, dict)]
              reg_str += f"- **status**: {', '.join(status_txts)}\n"
 
-        for f in fields:
-            val = whois_data.get('data', {}).get(f)
-            if val:
-                if isinstance(val, list):
-                    val = ", ".join(str(v) for v in val)
-                reg_str += f"- **{f}**: {val}\n"
+             for f in fields:
+                val = w_data_inner.get(f)
+                if val:
+                    if isinstance(val, list):
+                        val = ", ".join(str(v) for v in val)
+                    reg_str += f"- **{f}**: {val}\n"
     else:
         reg_str = "No Whois Data Available."
 
@@ -331,11 +334,13 @@ def main():
                 
                 if -5 <= days_since_expiry <= 5:
                     flags = data.get('flags', {})
-                    was_expired = flags.get('expired', False)
+                    # Only alert if we have history (key exists) and it wasn't expired before
+                    if 'expired' in flags:
+                        was_expired = flags['expired']
+                        if not was_expired:
+                            gh.create_or_update_issue(psl_entry, body, "domain expired", [section_tag])
                     
-                    if not was_expired:
-                        gh.create_or_update_issue(psl_entry, body, "domain expired", [section_tag])
-                        flags['expired'] = True
+                    flags['expired'] = True
                     data['flags'] = flags
                 elif days_since_expiry < -5:
                      # Reset flag if domain is renewed/future expiry
@@ -344,7 +349,7 @@ def main():
                 pass
                 
         # 2. Registry Hold
-        w_data = whois_cache.get('data', {})
+        w_data = whois_cache.get('data')
         statuses = w_data.get('status', []) if w_data else []
         is_hold = False
         for s in statuses:
@@ -354,10 +359,15 @@ def main():
                 break
         
         flags = data.get('flags', {})
-        was_hold = flags.get('hold', False)
         
-        if is_hold and not was_hold:
-            gh.create_or_update_issue(psl_entry, body, "registry hold", [section_tag])
+        # Only alert if history exists
+        if 'hold' in flags:
+            was_hold = flags['hold']
+            if is_hold and not was_hold:
+                gh.create_or_update_issue(psl_entry, body, "registry hold", [section_tag])
+            elif not is_hold and was_hold:
+                 # Optional: close issue if hold removed?
+                 gh.remove_tag_and_check_close(psl_entry, "registry hold")
             
         flags['hold'] = is_hold
         data['flags'] = flags
