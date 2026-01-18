@@ -77,9 +77,4 @@ class GHManager:
                 del self.issues_by_title[title]
 
     def ensure_body_up_to_date(self, title, new_body):
-        """
-        Optional: update body if changed significantly? 
-        The spec didn't strictly require constantly updating body, mainly tags.
-        But nice to have if implementation allows. For now, skipping to verify core logic first.
-        """
         pass

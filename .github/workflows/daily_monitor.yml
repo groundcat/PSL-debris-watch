@@ -29,6 +29,7 @@ jobs:
       - name: Run Monitor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WHOIS_API_URL_LIST: ${{ secrets.WHOIS_API_URL_LIST }}
         run: |
           python src/monitor.py
 

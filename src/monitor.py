@@ -1,11 +1,13 @@
 
+import random
 import os
 import json
 import requests
 import logging
 import datetime
 from dateutil import parser
-from dns_checker import DNSChecker
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from checker_utils import WhoisChecker, check_dns_resolver, check_psl_txt_resolver
 from gh_manager import GHManager
 
 # Setup Logging
@@ -14,6 +16,10 @@ logger = logging.getLogger(__name__)
 
 PSL_JSON_URL = "https://github.com/groundcat/psl-json/raw/refs/heads/main/public_suffix_list.extended.json"
 STATE_FILE = "data/monitor_state.json"
+WHOIS_API_URL_LIST = os.environ.get("WHOIS_API_URL_LIST", "").split(",")
+
+# Clean up empty strings in API list
+WHOIS_API_URL_LIST = [url.strip() for url in WHOIS_API_URL_LIST if url.strip()]
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -30,38 +36,78 @@ def save_state(state):
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=2)
 
-def generate_body(entry):
+def generate_body(domain_entry, whois_data):
     """
     Generates Markdown body for the issue.
     """
-    reg = entry.get('registry_records', {})
-    req = entry.get('requestor', {})
+    psl_entry = domain_entry.get('psl_entry_string')
+    section = domain_entry.get('section')
+    icann_domain = domain_entry.get('icann_normalized_domain')
     
-    # Flatten registry records for display
+    req = domain_entry.get('requestor', {})
+    
+    # Format registry records from Whois Data
     reg_str = ""
-    for k, v in reg.items():
-        if isinstance(v, list):
-             v = ", ".join([i.get('text', '') if isinstance(i, dict) else str(i) for i in v])
-        reg_str += f"- **{k}**: {v}\n"
+    if whois_data:
+        fields = [
+            'reserved', 'registered', 'registrar', 'creationDateISO8601', 
+            'expirationDateISO8601', 'updatedDateISO8601', 'nameServers'
+        ]
+        
+        # Helper to format status list
+        statuses = whois_data.get('data', {}).get('status', [])
+        if statuses:
+             status_txts = [s.get('text', '') for s in statuses if isinstance(s, dict)]
+             reg_str += f"- **status**: {', '.join(status_txts)}\n"
+
+        for f in fields:
+            val = whois_data.get('data', {}).get(f)
+            if val:
+                if isinstance(val, list):
+                    val = ", ".join(str(v) for v in val)
+                reg_str += f"- **{f}**: {val}\n"
+    else:
+        reg_str = "No Whois Data Available."
 
     body = f"""
 ## PSL Entry Details
 
-**Section**: {entry.get('section')}
-**PSL Entry String**: {entry.get('psl_entry_string')}
-**PSL Domain**: {entry.get('psl_domain')}
-**ICANN Normalized Domain**: {entry.get('icann_normalized_domain')}
-**ICANN TLD**: {entry.get('icann_tld')}
+**Section**: {section}
+**PSL Entry String**: {psl_entry}
+**PSL Domain**: {domain_entry.get('psl_domain')}
+**ICANN Normalized Domain**: {icann_domain}
+**ICANN TLD**: {domain_entry.get('icann_tld')}
 
 ### Requestor
 - **Description**: {req.get('requestor_description')}
 - **Contact Name**: {req.get('requestor_contact_name')}
 - **Contact Email**: {req.get('requestor_contact_email')}
 
-### Registry Records
+### Registry Records (Live Whois)
 {reg_str}
     """
     return body
+
+def check_dns_concurrent(domains, resolver_ip):
+    results = {}
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        future_to_domain = {executor.submit(check_dns_resolver, d, resolver_ip): d for d in domains}
+        for future in as_completed(future_to_domain):
+            d = future_to_domain[future]
+            try:
+                results[d] = future.result()
+            except Exception:
+                results[d] = "SERVFAIL"
+    return results
+
+def check_txt_concurrent(domains, resolver_ip):
+    results = {}
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        future_to_domain = {executor.submit(check_psl_txt_resolver, d, resolver_ip): d for d in domains}
+        for future in as_completed(future_to_domain):
+            d = future_to_domain[future]
+            results[d] = future.result()
+    return results
 
 def main():
     token = os.environ.get("GITHUB_TOKEN")
@@ -69,17 +115,14 @@ def main():
     
     if not token or not repo_name:
         logger.error("Missing environment variables GITHUB_TOKEN or GITHUB_REPOSITORY")
-        exit(1)
+        # For safety in dev environment, maybe don't exit if just testing build, but in prod exit.
+        if not os.environ.get("SAFE_MODE_DEV"):
+             exit(1)
 
     gh = GHManager(token, repo_name)
-    dns_checker = DNSChecker()
+    state = load_state()
     
-    # Load previous state
-    prev_state = load_state()
-    is_first_run = not bool(prev_state)
-    new_state = {}
-
-    # Fetch PSL data
+    # 1. Fetch PSL Data to get the list of domains
     logger.info("Fetching PSL JSON...")
     try:
         resp = requests.get(PSL_JSON_URL)
@@ -89,66 +132,220 @@ def main():
         logger.error(f"Failed to fetch PSL JSON: {e}")
         return
 
-    today = datetime.datetime.now(datetime.timezone.utc).date()
-    # today_iso = today.isoformat()
-
+    # Map domains -> entry
+    domain_map = {}
     for entry in psl_data:
-        psl_entry = entry.get('psl_entry_string')
-        if not psl_entry: continue
-        
-        domain = entry.get('icann_normalized_domain')
-        if not domain: continue # Should generally exist
+        d = entry.get('icann_normalized_domain')
+        if d:
+            domain_map[d] = entry
 
-        is_negation = entry.get('is_negation', False)
-        section = entry.get('section', 'icann')
-        
-        body = generate_body(entry)
-        section_tag = f"{section} section"
-        
-        # Helper to get previous state for this entry
-        prev_entry_state = prev_state.get(psl_entry, {})
+    # Initialize state (and migrate/clean old data)
+    clean_state = {}
+    
+    for domain, entry in domain_map.items():
+        # Check if exists in loaded state and has new format
+        if domain in state and 'whois' in state[domain]:
+             clean_state[domain] = state[domain]
+             # Update static fields just in case
+             clean_state[domain]['psl_entry_string'] = entry.get('psl_entry_string')
+             clean_state[domain]['section'] = entry.get('section', 'icann')
+             clean_state[domain]['is_negation'] = entry.get('is_negation', False)
+        else:
+            # Initialize new entry
+            clean_state[domain] = {
+                'psl_entry_string': entry.get('psl_entry_string'),
+                'section': entry.get('section', 'icann'),
+                'is_negation': entry.get('is_negation', False),
+                'whois': {
+                    'expiration_date': None,
+                    'creation_date': None,
+                    'last_checked': None,
+                    'consecutive_empty': 0,
+                    'data': None # cache full data for generating body
+                },
+                'dns_history': [], # List of status strings
+                'txt_history': [],  # List of bools
+                'flags': {}
+            }
+            
+    state = clean_state
 
-        # Prepare new state entry
-        new_state[psl_entry] = {
-            'dns_error': None,
-            'psl_txt_exists': None,
-            'is_hold': False,
-            'is_expired': False
-        }
+    # 2. Whois Checks
+    # Logic:
+    # - If exp date <= 10 days -> Check
+    # - If exp date > 10 days -> Skip
+    # - If exp date empty:
+    #    - If consec empty < 5 -> Check
+    #    - If consec empty >= 5 -> Skip
+    
+    today = datetime.datetime.now(datetime.timezone.utc).date()
+    domains_to_check_whois = []
+    
+    for domain, data in state.items():
+        # Only check if active in PSL (exists in current map)
+        if domain not in domain_map: continue
+        
+        w = data.get('whois', {})
+        exp_iso = w.get('expiration_date')
+        consec = w.get('consecutive_empty', 0)
+        
+        should_check = False
+        
+        if not w.get('last_checked'):
+            should_check = True
+        elif exp_iso:
+            try:
+                exp_date = parser.isoparse(exp_iso).date()
+                days_diff = (exp_date - today).days
+                if days_diff <= 10:
+                    should_check = True
+            except:
+                should_check = True # Parse error, recheck
+        else:
+            # Empty expiration date
+            if consec < 5:
+                should_check = True
+                
+        if should_check:
+            domains_to_check_whois.append(domain)
 
-        # -------------------
-        # STATIC CHECKS
-        # -------------------
+    logger.info(f"Checking Whois for {len(domains_to_check_whois)} domains...")
+    
+    # Shuffle for random ordering
+    random.shuffle(domains_to_check_whois)
+
+    whois_checker = WhoisChecker(WHOIS_API_URL_LIST)
+    
+    # Run Whois Concurrently
+    if WHOIS_API_URL_LIST and domains_to_check_whois:
+        with ThreadPoolExecutor(max_workers=min(20, len(domains_to_check_whois) or 1)) as executor:
+            future_to_domain = {executor.submit(whois_checker.query_domain, d): d for d in domains_to_check_whois}
+            
+            for future in as_completed(future_to_domain):
+                domain = future_to_domain[future]
+                result = future.result()
+                
+                # Update State
+                w_state = state[domain]['whois']
+                w_state['last_checked'] = today.isoformat()
+                
+                if result: # Success
+                    data_content = result.get('data') if result else {}
+                    if data_content is None: data_content = {}
+                    
+                    w_state['data'] = data_content
+                    w_state['expiration_date'] = data_content.get('expirationDateISO8601')
+                    w_state['creation_date'] = data_content.get('creationDateISO8601')
+                    
+                    if w_state['expiration_date']:
+                        w_state['consecutive_empty'] = 0
+                    else:
+                        w_state['consecutive_empty'] += 1
+                else:
+                    # Failed to fetch (timeout or error)
+                    w_state['consecutive_empty'] += 1
+
+    # 3. DNS Checks
+    # Run against R1 and R2 for ALL domains (filtered by negation?)
+    domains_to_check_dns = [d for d in state if d in domain_map and not state[d].get('is_negation')]
+    
+    if domains_to_check_dns:
+        logger.info(f"Checking DNS for {len(domains_to_check_dns)} domains...")
         
-        reg_records = entry.get('registry_records', {})
+        # DNS Run 1 (1.1.1.1)
+        r1_results = check_dns_concurrent(domains_to_check_dns, '1.1.1.1')
+        # DNS Run 2 (8.8.8.8)
+        r2_results = check_dns_concurrent(domains_to_check_dns, '8.8.8.8')
         
-        # 1. Domain Expired
-        # condition: expiration_date_iso8601 = today or within 5 days before today.
-        # Logic: If expired in window and NOT flagged as expired in previous run, create issue.
-        # This prevents re-alerting on the same expiration event.
+        # TXT Checks (only for private section)
+        private_domains = [d for d in domains_to_check_dns if state[d].get('section') == 'private']
+        txt_r1_results = check_txt_concurrent(private_domains, '1.1.1.1')
+        txt_r2_results = check_txt_concurrent(private_domains, '8.8.8.8')
         
-        exp_iso = reg_records.get('expiration_date_iso8601')
-        is_expired_in_window = False
+        # Process Results
+        for domain in domains_to_check_dns:
+            res1 = r1_results.get(domain, "SERVFAIL")
+            res2 = r2_results.get(domain, "SERVFAIL")
+            
+            final_status = "OK"
+            
+            is_error_1 = res1 in ["NXDOMAIN", "SERVFAIL"]
+            is_error_2 = res2 in ["NXDOMAIN", "SERVFAIL"]
+            
+            if is_error_1 and is_error_2:
+                # Both failed. Prioritise NXDOMAIN
+                if res1 == "NXDOMAIN" or res2 == "NXDOMAIN":
+                    final_status = "NXDOMAIN"
+                else:
+                    final_status = "SERVFAIL"
+            
+            # Update History
+            hist = state[domain]['dns_history']
+            hist.append(final_status)
+            if len(hist) > 5:
+                hist = hist[-5:]
+            state[domain]['dns_history'] = hist
+            
+            # Process TXT
+            if domain in private_domains:
+                t1 = txt_r1_results.get(domain, False)
+                t2 = txt_r2_results.get(domain, False)
+                
+                # Logic: If both fail to find it, it's missing.
+                # If at least one finds it -> Exists.
+                exists = t1 or t2
+                
+                txt_hist = state[domain]['txt_history']
+                txt_hist.append(exists)
+                if len(txt_hist) > 5:
+                    txt_hist = txt_hist[-5:]
+                state[domain]['txt_history'] = txt_hist
+                
+
+    # 4. GitHub Issue Management
+    logger.info("Managing GitHub Issues...")
+    
+    for domain, data in state.items():
+        if domain not in domain_map: continue
+        
+        psl_entry = data['psl_entry_string']
+        section_tag = f"{data['section']} section"
+        entry_details = domain_map[domain]
+        whois_cache = data['whois']
+        
+        # Generate Body
+        body = generate_body(entry_details, whois_cache)
+        
+        # --- STATIC CHECKS ---
+        
+        # 1. Expiration
+        # "expirationDateISO8601' is ... (<= 10 days) -> check whois" (Done above)
+        # GitHub Logic: "expiration_date_iso8601 = today or within 5 days before today" -> Issue.
+        exp_iso = whois_cache.get('expiration_date')
         if exp_iso:
             try:
                 exp_date = parser.isoparse(exp_iso).date()
-                days_diff = (today - exp_date).days
-                if 0 <= days_diff <= 5:
-                    is_expired_in_window = True
-            except Exception as e:
-                pass # logger.warning(f"Failed to parse expiration date for {psl_entry}: {e}")
-        
-        new_state[psl_entry]['is_expired'] = is_expired_in_window
-        
-        prev_is_expired = prev_entry_state.get('is_expired', False)
-        
-        if not is_first_run and is_expired_in_window and not prev_is_expired:
-             gh.create_or_update_issue(psl_entry, body, "domain expired", [section_tag])
-        # Only alert on the edge (False -> True) to avoid noise.
-
+                days_diff = (exp_date - today).days
+                
+                days_since_expiry = (today - exp_date).days
+                
+                if -5 <= days_since_expiry <= 5:
+                    flags = data.get('flags', {})
+                    was_expired = flags.get('expired', False)
+                    
+                    if not was_expired:
+                        gh.create_or_update_issue(psl_entry, body, "domain expired", [section_tag])
+                        flags['expired'] = True
+                    data['flags'] = flags
+                elif days_since_expiry < -5:
+                     # Reset flag if domain is renewed/future expiry
+                     data.setdefault('flags', {})['expired'] = False
+            except:
+                pass
+                
         # 2. Registry Hold
-        # condition: "status" text contains "hold"
-        statuses = reg_records.get('status', [])
+        w_data = whois_cache.get('data', {})
+        statuses = w_data.get('status', []) if w_data else []
         is_hold = False
         for s in statuses:
             txt = s.get('text', '').lower() if isinstance(s, dict) else ''
@@ -156,65 +353,83 @@ def main():
                 is_hold = True
                 break
         
-        new_state[psl_entry]['is_hold'] = is_hold
-        prev_is_hold = prev_entry_state.get('is_hold', False)
+        flags = data.get('flags', {})
+        was_hold = flags.get('hold', False)
         
-        if not is_first_run and is_hold and not prev_is_hold:
+        if is_hold and not was_hold:
             gh.create_or_update_issue(psl_entry, body, "registry hold", [section_tag])
+            
+        flags['hold'] = is_hold
+        data['flags'] = flags
 
         # 3. New Registration
-        # condition: creation_date_iso8601 = today
-        create_iso = reg_records.get('creation_date_iso8601')
-        if not is_first_run and create_iso:
+        # Only check on the day of "creation_date_iso8601 = today"
+        crt_iso = whois_cache.get('creation_date')
+        if crt_iso:
             try:
-                c_date = parser.isoparse(create_iso).date()
+                c_date = parser.isoparse(crt_iso).date()
                 if c_date == today:
-                    gh.create_or_update_issue(psl_entry, body, "new registration", [section_tag])
-            except Exception:
+                     gh.create_or_update_issue(psl_entry, body, "new registration", [section_tag])
+            except:
                 pass
 
-        # -------------------
-        # DYNAMIC CHECKS (DNS)
-        # -------------------
-
-        # Only check if not negation
-        if not is_negation:
-            # Check DNS Error (NXDOMAIN/SERVFAIL)
-            dns_status = dns_checker.check_dns_error(domain)
-            new_state[psl_entry]['dns_error'] = dns_status
+        # --- DYNAMIC CHECKS (History Based) ---
+        
+        # DNS Errors
+        # Last 5 entries are Errors.
+        
+        dns_hist = data.get('dns_history', [])
+        
+        if len(dns_hist) >= 5:
+            last_5 = dns_hist[-5:]
             
-            prev_dns = prev_entry_state.get('dns_error')
+            is_consistent_nx = all(x == "NXDOMAIN" for x in last_5)
+            is_consistent_sf = all(x == "SERVFAIL" for x in last_5)
             
-            # Logic: NoError YESTERDAY -> Error TODAY => Flag
-            if not is_first_run and prev_dns is None and dns_status in ["NXDOMAIN", "SERVFAIL"]:
-                tag = "nxdomain error" if dns_status == "NXDOMAIN" else "servfail error"
-                gh.create_or_update_issue(psl_entry, body, tag, [section_tag])
+            flags = data.get('flags', {})
+            current_dns_flag = flags.get('dns_error') # "NXDOMAIN", "SERVFAIL", or None
             
-            # Logic: Error YESTERDAY -> NoError TODAY => Remove tag
-            if prev_dns in ["NXDOMAIN", "SERVFAIL"] and dns_status is None:
-                # Remove both potential error tags
-                gh.remove_tag_and_check_close(psl_entry, "nxdomain error")
-                gh.remove_tag_and_check_close(psl_entry, "servfail error")
+            if is_consistent_nx:
+                if current_dns_flag != "NXDOMAIN":
+                    gh.create_or_update_issue(psl_entry, body, "nxdomain error", [section_tag])
+                    flags['dns_error'] = "NXDOMAIN"
+            elif is_consistent_sf:
+                if current_dns_flag != "SERVFAIL":
+                    gh.create_or_update_issue(psl_entry, body, "servfail error", [section_tag])
+                    flags['dns_error'] = "SERVFAIL"
+            else:
+                today_status = dns_hist[-1]
+                if today_status == "OK" and current_dns_flag:
+                    # Remove tags
+                    if current_dns_flag == "NXDOMAIN":
+                        gh.remove_tag_and_check_close(psl_entry, "nxdomain error")
+                    elif current_dns_flag == "SERVFAIL":
+                         gh.remove_tag_and_check_close(psl_entry, "servfail error")
+                    flags['dns_error'] = None
+            
+            data['flags'] = flags
 
-
-            # Check _psl TXT
-            # Only for 'private' section
-            if section == 'private':
-                has_txt = dns_checker.check_psl_txt(domain)
-                new_state[psl_entry]['psl_txt_exists'] = has_txt
+        # TXT Lost
+        if data['section'] == 'private':
+            txt_hist = data.get('txt_history', [])
+            if len(txt_hist) >= 5:
+                is_consistent_lost = all(x is False for x in txt_hist[-5:])
                 
-                prev_txt = prev_entry_state.get('psl_txt_exists')
+                flags = data.get('flags', {})
+                was_lost = flags.get('txt_lost', False)
                 
-                # Logic: Existed YESTERDAY (True) -> Missing TODAY (False) => Flag
-                if not is_first_run and prev_txt is True and has_txt is False:
-                    gh.create_or_update_issue(psl_entry, body, "_psl txt lost", [section_tag])
-                
-                # Logic: Missing YESTERDAY -> Exists TODAY => Remove tag
-                if prev_txt is False and has_txt is True:
-                     gh.remove_tag_and_check_close(psl_entry, "_psl txt lost")
+                if is_consistent_lost:
+                    if not was_lost:
+                        gh.create_or_update_issue(psl_entry, body, "_psl txt lost", [section_tag])
+                        flags['txt_lost'] = True
+                else:
+                    if txt_hist[-1] is True and was_lost:
+                        gh.remove_tag_and_check_close(psl_entry, "_psl txt lost")
+                        flags['txt_lost'] = False
+                data['flags'] = flags
 
     # Save State
-    save_state(new_state)
+    save_state(state)
     logger.info("Done.")
 
 if __name__ == "__main__":
